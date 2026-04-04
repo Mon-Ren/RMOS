@@ -395,8 +395,27 @@ updated: 2026-04-04
 - [[cpp-代码审查清单]] — 安全、资源、类型、并发检查点
 - [[cpp-常见陷阱与反模式]] — vector<bool>、map::operator[] 等
 
+## C++ — 模板进阶
+
+- [[cpp-模板特化与偏特化]] — 全特化、偏特化、函数模板重载替代
+- [[cpp-ADL参数依赖查找]] — 参数依赖查找、swap 惯用法
+- [[cpp-编译期控制流]] — if constexpr、constexpr 循环、递归模板
+- [[cpp-if-consteval]] — 编译期/运行时分支
+
+## C++ — 并发进阶
+
+- [[cpp-内存序实际应用示例]] — 自旋锁、双重检查锁、生产者消费者
+- [[cpp-并发安全的数据结构设计]] — 粗粒度锁、细粒度锁、无锁 CAS
+
+## C++ — STL 深入
+
+- [[cpp-counted-iterator与ranges视图]] — counted_iterator、iota_view、repeat
+- [[cpp-容器适配器深入]] — 适配器本质、自定义适配器
+
 ## C++ — 工具链与工程
 
+- [[cpp-编译器内联决策]] — 自动内联启发式、帮助编译器内联
+- [[cpp-编译器警告指南]] — -Wall/-Wextra、常见警告及修复
 - [[cpp-CMake基础]] — 现代 CMake、target-based
 - [[cpp-编译优化与链接优化]] — -O2、LTO、PGO、内联
 - [[cpp-编译时间优化]] — Pimpl、前向声明、显式实例化
