@@ -160,6 +160,7 @@ xv6 支持最多 2 个 IDE 磁盘（havedisk1 标志），通过 `b->dev` 的最
 - [[xv6 缓冲区缓存]] — bread/bwrite 调用 iderw
 - [[xv6 睡眠与唤醒]] — iderw 使用 sleep 等待中断
 - [[设备驱动模型]] — 设备驱动的通用模式
+- [[内存映射 I/O]] — IDE 用端口 I/O，现代设备用 MMIO
 - [[xv6 锁与同步]] — idelock 保护请求队列
 - [[IDT 与中断机制]] — IRQ_IDE 如何路由到中断处理
 - [[DMA 与总线架构]] — PIO 的对比方案

@@ -98,6 +98,8 @@ void acquiresleep(struct sleeplock *lk) {
 > 自旋锁的核心是 **xchg 原子指令 + 关中断**，保证临界区在单核和多核环境下都是互斥的。睡眠锁在自旋锁之上加了 sleep/wakeup 机制，适合持锁时间长的场景。xv6 的锁设计遵循最小化临界区原则——自旋锁只保护最短路径，长操作用睡眠锁。
 
 ## 关联
+- [[死锁]] — 锁序约定防止循环等待
+- [[信号量]] — sleep/wakeup 是 xv6 版的信号量机制
 - [[xv6 进程管理]] — ptable.lock 保护进程表
 - [[xv6 中断与陷阱]] — pushcli 关中断防止自旋锁死锁
 - [[xv6 文件系统]] — sleeplock 保护 inode 和 buffer

@@ -103,9 +103,11 @@ void scheduler(void) {
 > xv6 进程管理的核心是 **ptable 全局数组 + 自旋锁**。所有状态转换都在持有 ptable.lock 下进行。调度器是纯轮转、无优先级、无时间片——这是教学 OS 的简化设计，但完整展示了进程生命周期的本质。
 
 ## 关联
+- [[虚拟内存]] — 进程独立地址空间的基础
 - [[信号机制]] — kill() 设置 killed 标志，信号触发 exit
 - [[xv6 启动流程]] — userinit 是启动的最后一步
 - [[页表机制]] — pgdir 和 copyuvm 的内存隔离
 - [[xv6 中断与陷阱]] — trapframe 的布局和作用
 - [[xv6 系统调用]] — fork/exit/wait 都通过 syscall 接口暴露
 - [[上下文切换]] — swtch.S 的实现细节
+- [[xv6 ELF 与进程加载]] — exec 替换进程镜像
