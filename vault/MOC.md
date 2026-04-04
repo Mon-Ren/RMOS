@@ -447,3 +447,22 @@ updated: 2026-04-04
 - [[cpp-异常与构造函数]] — 构造函数异常、部分构造析构规则
 - [[cpp-模板友元]] — 模板类的友元声明
 - [[cpp-编译期类型列表与类型操作]] — TypeList、Head/Tail、IndexOf
+
+## C++ — 并发与线程安全
+
+- [[cpp-并发中的死锁与避免]] — 锁顺序、scoped_lock、锁层级
+- [[cpp-线程安全的懒初始化]] — static局部变量、call_once、双重检查锁
+- [[cpp-unordered-multimap与multiset]] — 多键哈希容器
+
+## C++ — 编译期编程
+
+- [[cpp-编译期校验与static_assert]] — 编译期断言、禁止实例化
+- [[cpp-constinit]] — 编译期初始化但可修改
+- [[cpp-编译期字符串处理]] — constexpr string、编译期哈希
+
+## C++ — 进阶设计
+
+- [[cpp-变量生命周期与存储期]] — 自动/静态/线程/动态存储期
+- [[cpp-嵌套类与局部类]] — 嵌套类访问权限、局部类限制
+- [[cpp-位字段]] — struct 位域、内存布局
+- [[cpp-表达式模板]] — 延迟求值、Eigen 核心技术
