@@ -1,206 +1,77 @@
 ---
 title: 类型擦除
-tags: [cpp, idiom, type-erasure, polymorphism]
-aliases: [Type Erasure, 类型擦除, Concept Wrapper, External Polymorphism]
+tags: [cpp, type-erasure, any, function, variant, polymorphism]
+aliases: [类型擦除, type erasure, 运行时多态替代, std::function原理]
 created: 2026-04-04
 updated: 2026-04-04
 ---
 
 # 类型擦除
 
-**一句话概述：** 将不同具体类型的对象统一为相同的接口类型，隐藏原始类型信息——`std::function`、`std::any`、`std::shared_ptr` 的核心实现技术。
+类型擦除隐藏具体类型，提供统一接口——`std::function`、`std::any`、`std::shared_ptr` 的实现核心。
 
-## 意图与场景
-
-Type Erasure 在不使用继承的情况下实现运行时多态：
-
-- **统一接口，隐藏类型**：不同类型可以用相同接口操作
-- **去除模板依赖**：避免模板在 API 中的传播
-- **外部多态**：不修改原始类型即可为其添加接口
-
-**适用场景：**
-- 需要存储不同类型的同质容器
-- 库的公共 API 需要隐藏模板
-- 插件架构、回调系统
-- 类型安全的 `void*` 替代（`std::any`）
-
-## C++ 实现代码
-
-### 手动实现类型擦除（std::function 原理）
+## 原理
 
 ```cpp
-#include <memory>
-#include <utility>
-#include <iostream>
-#include <vector>
-
+// 类型擦除 = 多态 + 模板构造函数
 class Drawable {
-    // 类型擦除的核心：内部桥接接口
+    // 抽象接口
     struct Concept {
         virtual ~Concept() = default;
-        virtual void draw() const = 0;
+        virtual void draw(std::ostream&) const = 0;
         virtual std::unique_ptr<Concept> clone() const = 0;
     };
 
+    // 模板实现：捕获任意类型
     template <typename T>
     struct Model : Concept {
-        T object_;
-        explicit Model(T obj) : object_(std::move(obj)) {}
-        
-        void draw() const override {
-            object_.draw();  // 鸭子类型：只要 T 有 draw() 方法
-        }
+        T value_;
+        explicit Model(T v) : value_(std::move(v)) {}
+        void draw(std::ostream& os) const override { os << value_; }
         std::unique_ptr<Concept> clone() const override {
-            return std::make_unique<Model>(object_);
+            return std::make_unique<Model>(value_);
         }
     };
 
-    std::unique_ptr<Concept> impl_;
+    std::unique_ptr<Concept> self_;
 
 public:
-    // 任意类型构造
+    // 模板构造函数：任何可 draw 的类型都能构造 Drawable
     template <typename T>
-    Drawable(T obj) : impl_(std::make_unique<Model<T>>(std::move(obj))) {}
-    
-    // 拷贝语义
-    Drawable(const Drawable& other) : impl_(other.impl_->clone()) {}
+    Drawable(T value) : self_(std::make_unique<Model<T>>(std::move(value))) {}
+
+    Drawable(const Drawable& other) : self_(other.self_->clone()) {}
     Drawable& operator=(const Drawable& other) {
-        if (this != &other) impl_ = other.impl_->clone();
+        self_ = other.self_->clone();
         return *this;
     }
-    
-    Drawable(Drawable&&) noexcept = default;
-    Drawable& operator=(Drawable&&) noexcept = default;
-    
-    void draw() const { impl_->draw(); }
+
+    void draw(std::ostream& os) const { self_->draw(os); }
 };
 
-// 使用：完全不相关的类型
-struct Circle { double r; 
-    void draw() const { std::cout << "Circle r=" << r << '\n'; }
-};
-struct Label { std::string text; 
-    void draw() const { std::cout << "Label: " << text << '\n'; }
-};
-
-void demo() {
-    std::vector<Drawable> shapes;
-    shapes.emplace_back(Circle{5.0});
-    shapes.emplace_back(Label{"Hello"});
-    
-    for (const auto& s : shapes) {
-        s.draw();  // 统一接口，原始类型已擦除
-    }
-}
+// 使用：不同具体类型统一为 Drawable
+std::vector<Drawable> items;
+items.push_back(42);              // Model<int>
+items.push_back(std::string("hi")); // Model<string>
+items.push_back(3.14);            // Model<double>
+for (const auto& d : items) d.draw(std::cout);
 ```
 
-### std::function 的简化实现
+## std::function 的原理
 
 ```cpp
-#include <memory>
-#include <utility>
-#include <functional>
-
-template <typename Signature>
-class Function;
-
-template <typename R, typename... Args>
-class Function<R(Args...)> {
-    struct CallableBase {
-        virtual ~CallableBase() = default;
-        virtual R invoke(Args... args) const = 0;
-        virtual std::unique_ptr<CallableBase> clone() const = 0;
-    };
-
-    template <typename F>
-    struct CallableImpl : CallableBase {
-        F func_;
-        explicit CallableImpl(F f) : func_(std::move(f)) {}
-        
-        R invoke(Args... args) const override {
-            return func_(std::forward<Args>(args)...);
-        }
-        std::unique_ptr<CallableBase> clone() const override {
-            return std::make_unique<CallableImpl>(func_);
-        }
-    };
-
-    std::unique_ptr<CallableBase> callable_;
-
-public:
-    Function() = default;
-    
-    template <typename F>
-    Function(F f) : callable_(std::make_unique<CallableImpl<F>>(std::move(f))) {}
-    
-    R operator()(Args... args) const {
-        return callable_->invoke(std::forward<Args>(args)...);
-    }
-    
-    explicit operator bool() const noexcept { return callable_ != nullptr; }
-};
+// std::function 类似上述 Drawable，但针对可调用对象
+// 存储：虚函数表指针 + 小对象缓冲区或堆指针
+// 小对象优化：lambda 小于一定大小时直接存缓冲区
 ```
 
-### C++17 std::any 简化实现
+## 关键要点
 
-```cpp
-#include <memory>
-#include <typeinfo>
+> 类型擦除的开销：虚函数调用（间接跳转）+ 可能的堆分配。模板构造函数在编译期生成具体实现，运行时通过虚函数分发。
 
-class Any {
-    struct StorageBase {
-        virtual ~StorageBase() = default;
-        virtual const std::type_info& type() const = 0;
-        virtual std::unique_ptr<StorageBase> clone() const = 0;
-    };
-    
-    template <typename T>
-    struct StorageImpl : StorageBase {
-        T value_;
-        explicit StorageImpl(T v) : value_(std::move(v)) {}
-        const std::type_info& type() const override { return typeid(T); }
-        std::unique_ptr<StorageBase> clone() const override {
-            return std::make_unique<StorageImpl>(value_);
-        }
-    };
-    
-    std::unique_ptr<StorageBase> storage_;
+> 类型擦除不同于 variant——variant 在编译期知道所有类型，类型擦除完全隐藏类型。
 
-public:
-    Any() = default;
-    
-    template <typename T>
-    Any(T value) : storage_(std::make_unique<StorageImpl<T>>(std::move(value))) {}
-    
-    const std::type_info& type() const { 
-        return storage_ ? storage_->type() : typeid(void); 
-    }
-    
-    bool has_value() const noexcept { return storage_ != nullptr; }
-};
+## 相关模式 / 关联
 
-template <typename T>
-T any_cast(const Any& a) {
-    if (a.type() != typeid(T)) throw std::bad_cast();
-    // 实际实现需 dynamic_cast ...
-}
-```
-
-## 优缺点
-
-| 优点 | 缺点 |
-|------|------|
-| 不需要公共基类 | 间接调用有性能开销（虚函数 + 堆分配） |
-| 类型安全（vs void*） | 实现复杂度高 |
-| API 不暴露模板 | 每个操作增加一次间接调用 |
-| 支持值语义（可拷贝） | 不支持子类特有方法 |
-
-> [!tip] 关键要点
-> 类型擦除是**编译时接口 + 运行时多态**的桥梁。`std::function<void()>` 可以存储 lambda、函数指针、bind 表达式——完全不同类型，相同接口。现代 C++ 趋势是用类型擦除替代虚继承，提供值语义的同时保持灵活性。性能敏感场景注意堆分配开销（小对象优化 SSO 可缓解）。
-
-## 相关链接
-
-- [[策略模式]] — 策略通常通过类型擦除实现
-- [[Visitor 模式]] — 双重分派 vs 类型擦除
-- [[cpp-智能指针详解]] — shared_ptr 的类型擦除删除器
-- [[cpp-函数式编程模式]] — std::function 的使用
+- [[cpp-variant]] — 编译期知道类型集合时的替代
+- [[cpp-函数指针与function]] — std::function 的类型擦除

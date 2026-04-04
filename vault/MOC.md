@@ -235,3 +235,180 @@ updated: 2026-04-04
 - [[elf-文件格式]] — ELF 规范
 - [[x86 系统调用演进]] — int 80h → syscall
 - [[系统调用实现]] — 系统调用的通用框架
+
+---
+
+## C++ — 语言基础
+
+- [[cpp-基本数据类型]] — 类型体系、sizeof、整数提升
+- [[cpp-const与constexpr]] — const 正确性、constexpr、consteval
+- [[cpp-引用与指针]] — 左值引用、右值引用、转发引用
+- [[cpp-类型转换]] — static_cast、dynamic_cast、const_cast、reinterpret_cast
+- [[cpp-auto与类型推导]] — auto 推导规则、decltype、尾置返回类型
+- [[cpp-lambda表达式]] — 捕获、泛型 lambda、递归 lambda
+- [[cpp-枚举类型]] — enum class vs enum、位标志枚举
+- [[cpp-结构化绑定]] — C++17 多返回值解包
+- [[cpp-命名空间]] — 嵌套命名空间、匿名命名空间、内联命名空间
+- [[cpp-sizeof与内存对齐]] — 对齐规则、padding、alignas
+- [[cpp-编译模型与ODR]] — 编译过程、声明 vs 定义、单一定义规则
+- [[cpp-堆与栈内存]] — 栈分配 vs 堆分配、性能对比
+- [[cpp-string深入]] — SSO、string_view、常用操作
+- [[cpp-string_view注意事项]] — 生命周期陷阱、安全用法
+- [[cpp-字符串字面量与原始字符串]] — 前缀、R"()"、自定义后缀
+- [[cpp-函数重载与默认参数]] — 重载决议、const 重载
+- [[cpp-异常处理]] — try-catch、异常安全级别、noexcept
+- [[cpp-预处理器]] — 宏、条件编译、include guard
+- [[cpp-位运算深入]] — 位操作技巧、bitset、popcount
+- [[cpp-与C互操作]] — extern "C"、POD 类型接口
+- [[cpp-常见陷阱与反模式]] — 最常见错误、vector<bool>、map::operator[]
+
+## C++ — 面向对象
+
+- [[cpp-类与对象]] — 特殊成员函数、初始化列表、Rule of Five
+- [[cpp-继承与多态]] — 虚函数、vtable、override/final
+- [[cpp-运算符重载]] — 成员 vs 非成员、比较运算符、流运算符
+- [[cpp-多重继承与虚继承]] — 菱形问题、虚基类
+- [[cpp-RTTI与typeid]] — 运行时类型识别、type_info
+- [[cpp-友元与静态成员]] — friend、static 成员函数
+- [[cpp-转换构造函数与转换运算符]] — explicit、隐式转换
+- [[cpp-this指针与成员指针]] — this、成员指针、deducing this
+- [[cpp-union与匿名联合]] — C union、C++11 改进
+- [[cpp-引用限定成员函数]] — & 与 && 限定、右值成员函数
+- [[cpp-Rule-of-Zero与Rule-of-Five]] — 特殊成员函数管理
+- [[cpp-深拷贝与浅拷贝]] — 拷贝语义、值语义 vs 指针语义
+- [[cpp-EBO与no_unique_address]] — 空基类优化、空类不占空间
+- [[cpp-设计模式选型]] — 运行时 vs 编译时多态选型
+
+## C++ — 模板与泛型
+
+- [[cpp-模板编程基础]] — 函数模板、类模板、特化、SFINAE
+- [[cpp-可变参数模板]] — 参数包、展开、完美转发
+- [[cpp-concepts]] — C++20 概念约束、requires 表达式
+- [[cpp-模板模板参数]] — 模板作为模板参数
+- [[cpp-折叠表达式]] — C++17 四种折叠形式
+- [[cpp-if-constexpr]] — 编译期分支、替代 SFINAE
+- [[cpp-type-traits]] — 类型检查、类型变换、void_t
+- [[cpp-sfinae与编译期多态]] — enable_if、SFINAE 原理
+- [[cpp-标签分发]] — 编译期函数选择
+- [[cpp-编译期计算与constexpr深入]] — constexpr 演进、consteval、constinit
+- [[cpp-模板元编程]] — 编译期计算、类型计算
+- [[cpp-别名模板与using]] — using vs typedef、模板别名
+- [[cpp-CTAD类模板参数推导]] — 类模板参数自动推导
+- [[cpp-编译期字符串哈希]] — FNV-1a、switch on string
+- [[cpp-CRTP应用场景汇总]] — 静态多态、Mixin、计数器
+
+## C++ — 标准库（STL 容器）
+
+- [[cpp-vector深入]] — 扩容策略、迭代器失效、emplace_back
+- [[cpp-string深入]] — SSO、string_view、常用操作
+- [[cpp-map与set]] — 红黑树、有序遍历、范围查询
+- [[cpp-unordered-map]] — 哈希表、自定义哈希、桶管理
+- [[cpp-unordered容器的哈希与桶]] — 哈希函数质量、rehash、负载因子
+- [[cpp-deque与list]] — 分段连续内存、双向链表
+- [[cpp-栈队列与优先队列]] — 容器适配器、最大/最小堆
+- [[cpp-array与std-array]] — 固定大小数组、零开销
+- [[cpp-emplace操作]] — 原地构造、完美转发
+- [[cpp-容器选择指南]] — 决策流程、性能特性对比
+- [[cpp-迭代器失效规则汇总]] — 各容器的失效规则
+- [[cpp-flat-map与flat-set]] — C++23 基于有序 vector 的关联容器
+- [[cpp-mdspan]] — C++23 多维数组视图
+
+## C++ — 标准库（STL 算法与迭代器）
+
+- [[cpp-stl算法总览]] — 查找、排序、变换、归约、集合操作
+- [[cpp-迭代器类别与适配器]] — 迭代器五种类别、反向/插入/移动迭代器
+- [[cpp-数值算法与归约]] — accumulate、reduce、transform_reduce、前缀和
+- [[cpp-并行算法]] — C++17 execution policy、par、par_unseq
+- [[cpp-lambda在STL算法中的应用]] — 排序谓词、查找条件、聚合
+
+## C++ — 智能指针与内存管理
+
+- [[cpp-智能指针详解]] — unique_ptr、shared_ptr、weak_ptr（已有）
+- [[cpp-智能指针对比与最佳实践]] — 选择指南、参数传递
+- [[cpp-new与delete深入]] — operator new、placement new
+- [[cpp-allocator与PMR]] — 自定义分配器、多态分配器
+- [[cpp-小对象优化]] — SSO/SBO、栈上存储
+- [[cpp-内存泄漏检测]] — ASan、valgrind、heaptrack
+- [[cpp-悬垂指针与use-after-free]] — 常见来源、防御手段
+- [[cpp-异常处理性能开销]] — 零开销模型、table-based
+
+## C++ — 移动语义与值类别
+
+- [[cpp-右值引用与移动语义]] — std::move、完美转发、5/3/0 法则
+- [[cpp-move-only类型]] — 独占所有权、不可拷贝
+- [[cpp-拷贝省略与RVO]] — RVO、NRVO、C++17 强制省略
+- [[cpp-emplace操作]] — 原地构造
+- [[cpp-function实现原理]] — 类型擦除、小对象优化
+
+## C++ — 并发与多线程
+
+- [[cpp-thread与线程管理]] — thread 创建、jthread、线程管理
+- [[cpp-mutex与lock]] — mutex、lock_guard、unique_lock、scoped_lock
+- [[cpp-condition-variable]] — 条件变量、生产者-消费者
+- [[cpp-future与async]] — future、promise、packaged_task
+- [[cpp-atomic与内存序]] — 原子操作、六种内存序
+- [[cpp-递归互斥锁与读写锁深入]] — recursive_mutex、shared_mutex
+- [[cpp-call_once与thread_local]] — 恰好一次初始化、线程局部存储
+- [[cpp-信号量与屏障]] — counting_semaphore、latch、barrier
+- [[cpp-jthread与协作式取消]] — 自动 join、stop_token
+- [[cpp-内存模型与数据竞争]] — happens-before、可见性
+- [[cpp-内存屏障与CPU重排]] — fence、SFENCE/LFENCE/MFENCE
+- [[cpp-线程安全与数据竞争检测]] — TSan、线程安全级别
+- [[cpp-并发队列与线程池]] — 线程池实现、带返回值的任务
+- [[cpp-并发模式总览]] — 各层次并发抽象选型
+- [[cpp-异步编程模型对比]] — callback、future、协程对比
+
+## C++ — 现代 C++ 特性
+
+- [[cpp-cpp11特性汇总]] — auto、lambda、移动语义、智能指针
+- [[cpp-cpp14特性汇总]] — 泛型 lambda、make_unique、constexpr 增强
+- [[cpp-cpp17特性汇总]] — 结构化绑定、if constexpr、optional、variant
+- [[cpp-cpp20特性汇总]] — Concepts、Ranges、协程、Modules
+- [[cpp-cpp23新特性]] — print、deducing this、expected、mdspan
+- [[cpp-range库]] — 管道操作、惰性视图
+- [[cpp-协程]] — co_await、co_yield、generator
+- [[cpp-modules]] — import/export、替代头文件
+- [[cpp-spaceship运算符]] — <=>、自动生成比较运算符
+- [[cpp-optional]] — 可选值、monadic 操作
+- [[cpp-variant]] — 类型安全联合体、visit
+- [[cpp-any]] — 任意类型容器
+- [[cpp-expected]] — C++23 值或错误
+- [[cpp-span]] — 连续数据视图
+- [[cpp-format]] — 类型安全格式化
+- [[cpp-print与println]] — C++23 直接输出
+- [[cpp-filesystem]] — 路径、目录遍历、文件操作
+- [[cpp-属性]] — nodiscard、maybe_unused、likely
+- [[cpp-deducing-this]] — C++23 显式对象参数
+- [[cpp自定义字面量]] — operator""、编译期哈希
+
+## C++ — 函数式与设计
+
+- [[cpp-函数指针与function]] — 函数指针、std::function
+- [[cpp-函数对象]] — functor、预定义函数对象
+- [[cpp-类型擦除]] — type erasure 原理、实现
+- [[cpp-函数式编程模式深入]] — 高阶函数、管道、Option 模式
+- [[cpp-any与variant对比]] — 选型指南
+- [[cpp-异常vs错误码]] — 错误处理策略选择
+- [[cpp-异常安全深入]] — 基本/强保证、copy-and-swap
+- [[cpp-const正确性]] — const 成员函数、const 引用
+- [[cpp-代码规范与最佳实践]] — 命名、接口设计、内存管理
+- [[cpp-代码审查清单]] — 安全、资源、类型、并发检查点
+- [[cpp-常见陷阱与反模式]] — vector<bool>、map::operator[] 等
+
+## C++ — 工具链与工程
+
+- [[cpp-CMake基础]] — 现代 CMake、target-based
+- [[cpp-编译优化与链接优化]] — -O2、LTO、PGO、内联
+- [[cpp-编译时间优化]] — Pimpl、前向声明、显式实例化
+- [[cpp-内联函数深入]] — inline 的现代含义
+- [[cpp-编译器内建函数]] — __builtin_popcount、__builtin_expect
+- [[cpp-调试技术与断言]] — assert、static_assert、ASan、UBSan
+- [[cpp-宏与调试输出]] — 调试宏、条件日志
+- [[cpp-clang-tidy与静态分析]] — 代码质量自动化检查
+- [[cpp-测试基础]] — Google Test、编译期测试
+- [[cpp-性能分析与基准测试]] — profiling、Google Benchmark
+- [[cpp-性能优化速查]] — 算法、数据结构、缓存、编译器
+- [[cpp-缓存友好设计]] — 数据局部性、false sharing、SoA vs AoS
+- [[cpp-随机数与分布]] — mt19937、uniform/normal 分布
+- [[cpp-多态容器与类型擦除容器]] — variant vs any vs OOP
+- [[cpp-时间库chrono]] — duration、time_point、clock
