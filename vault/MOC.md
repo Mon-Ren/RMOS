@@ -466,3 +466,16 @@ updated: 2026-04-04
 - [[cpp-嵌套类与局部类]] — 嵌套类访问权限、局部类限制
 - [[cpp-位字段]] — struct 位域、内存布局
 - [[cpp-表达式模板]] — 延迟求值、Eigen 核心技术
+
+## C++ — 语法与语义
+
+- [[cpp-尾置返回类型]] — auto 返回类型、decltype
+- [[cpp-委托构造函数]] — 构造函数链、代码复用
+- [[cpp-移动语义与异常安全]] — noexcept 移动、vector 扩容决策
+- [[cpp-ABI与二进制兼容]] — ABI 稳定、Pimpl 与接口
+- [[cpp-编译期整数序列]] — index_sequence、参数包展开
+- [[cpp-lambda与递归]] — 递归 lambda 四种方案
+- [[cpp-pair与tuple]] — pair/tuple 操作、结构化绑定
+- [[cpp-ranges管道与适配器]] — 管道机制、自定义适配器
+- [[cpp-编译器特定扩展]] — GCC/Clang/MSVC 扩展封装
+- [[cpp-ODR-use与未使用变量]] — ODR-use、maybe_unused
