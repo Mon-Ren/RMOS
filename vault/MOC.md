@@ -431,3 +431,19 @@ updated: 2026-04-04
 - [[cpp-随机数与分布]] — mt19937、uniform/normal 分布
 - [[cpp-多态容器与类型擦除容器]] — variant vs any vs OOP
 - [[cpp-时间库chrono]] — duration、time_point、clock
+
+## C++ — 设计模式与惯用法
+
+- [[cpp-Pimpl惯用法]] — 编译防火墙、pointer to implementation
+- [[cpp-Scope-Guard]] — 作用域守卫、异常安全清理
+- [[cpp-对象池模式]] — placement new、内存复用
+
+## C++ — 工程实践
+
+- [[cpp-前向声明与减少依赖]] — 前向声明规则、fwd.h
+- [[cpp-智能指针与容器]] — vector<unique_ptr>、多态容器
+- [[cpp-字符串拼接与性能]] — reserve、ostringstream、std::format
+- [[cpp-函数返回多个值]] — struct/pair/optional/expected 选型
+- [[cpp-异常与构造函数]] — 构造函数异常、部分构造析构规则
+- [[cpp-模板友元]] — 模板类的友元声明
+- [[cpp-编译期类型列表与类型操作]] — TypeList、Head/Tail、IndexOf
