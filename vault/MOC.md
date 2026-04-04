@@ -479,3 +479,19 @@ updated: 2026-04-04
 - [[cpp-ranges管道与适配器]] — 管道机制、自定义适配器
 - [[cpp-编译器特定扩展]] — GCC/Clang/MSVC 扩展封装
 - [[cpp-ODR-use与未使用变量]] — ODR-use、maybe_unused
+
+## C++ — 模板进阶（续）
+
+- [[cpp-模板特化选择规则]] — 偏序规则、全特化 vs 偏特化
+- [[cpp-模板显式实例化]] — extern template、显式实例化定义
+- [[cpp-sizeof参数包]] — sizeof... 运算符
+
+## C++ — 工程实践（续）
+
+- [[cpp-预编译头PCH]] — PCH 创建与使用、CMake 集成
+- [[cpp-浮点数精度与比较]] — 浮点比较、epsilon、ULP
+- [[cpp-零初始化与值初始化]] — 初始化规则、统一初始化
+- [[cpp-reference-wrapper]] — 可拷贝引用、容器中的引用
+- [[cpp-std-byte]] — 原始字节类型、位操作
+- [[cpp-function与lambda性能对比]] — 调用开销、内联
+- [[cpp-if-constexpr最佳实践]] — 使用模式、常见陷阱
