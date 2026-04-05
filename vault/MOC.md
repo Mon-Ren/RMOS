@@ -598,3 +598,14 @@ updated: 2026-04-04
 - [[linux-PAM-认证模块]] — auth/account/session/password
 - [[linux-audit-审计系统]] — auditctl/ausearch/aureport
 - [[linux-内核编译与配置]] — menuconfig、make、安装
+
+- [[linux-IO-调度器]] — mq-deadline/bfq/kyber/none
+- [[linux-KVM-虚拟化]] — QEMU/libvirt/virt-install
+- [[linux-TCP-拥塞控制]] — CUBIC/BBR/慢启动/拥塞避免
+- [[linux-systemd-日志最佳实践]] — journalctl 高级过滤与格式
+- [[linux-定时器与时间子系统]] — jiffies/hrtimer/NTP
+- [[linux-Slab-分配器]] — Slub/kmem_cache/per-CPU 缓存
+- [[linux-中断子系统]] — 硬中断/软中断/tasklet/工作队列
+- [[linux-Page-Cache-与回写]] — 缓冲IO/dirty回写/O_DIRECT
+- [[linux-OOM-调优与内存保护]] — oom_score/memory.min
+- [[linux-Btrfs-文件系统]] — CoW/快照/子卷/透明压缩
