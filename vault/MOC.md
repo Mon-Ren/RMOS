@@ -518,3 +518,29 @@ updated: 2026-04-04
 - [[cpp-constexpr-分配与编译期容器]] — C++20 编译期 vector/string/排序
 - [[cpp-lambda-闭包对象的内存布局]] — lambda 编译器展开、捕获的底层
 - [[cpp-Rust风格Result在C++中的实践]] — std::expected 链式操作、and_then
+
+## Linux — 文件系统与目录
+
+- [[linux-文件系统层次标准]] — FHS 目录结构规范
+- [[linux-目录操作基础命令]] — cd/ls/pwd/mkdir/rmdir
+- [[linux-文件操作基础命令]] — cat/cp/mv/rm/touch
+
+## Linux — 权限与用户
+
+- [[linux-文件权限与-chmod]] — rwx 权限、SUID/SGID/Sticky
+- [[linux-用户与用户组管理]] — useradd/groupadd/passwd
+
+## Linux — Shell 与文本
+
+- [[linux-管道与重定向]] — stdin/stdout/stderr、管道、xargs
+- [[linux-文本处理三剑客]] — grep/sed/awk
+- [[linux-shell-基础语法]] — 变量、条件、循环、脚本结构
+
+## Linux — 进程管理
+
+- [[linux-进程基础与-ps-命令]] — ps/top/proc 文件系统
+- [[linux-信号与-kill-命令]] — 信号机制、kill/killall
+
+## Linux — 网络
+
+- [[linux-网络基础命令]] — ip/ss/ping/curl/dig
