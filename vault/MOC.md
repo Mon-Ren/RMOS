@@ -544,3 +544,14 @@ updated: 2026-04-04
 ## Linux — 网络
 
 - [[linux-网络基础命令]] — ip/ss/ping/curl/dig
+
+- [[linux-硬链接与软链接]] — hard link vs symlink 对比
+- [[linux-后台任务与-nohup]] — nohup/disown/screen/tmux
+- [[linux-find-命令]] — 按名称/类型/大小/时间查找文件
+- [[linux-grep-高级用法]] — PCRE、上下文、多模式、提取
+- [[linux-sed-高级用法]] — 地址范围、保持空间、多命令
+- [[linux-awk-高级用法]] — 数组统计、流程控制、自定义函数
+- [[linux-crontab-定时任务]] — cron 格式、环境变量、示例
+- [[linux-systemctl-与-systemd]] — 服务管理、journalctl、unit 文件
+- [[linux-SSH-配置与安全]] — 密钥、config、隧道、安全加固
+- [[linux-磁盘与分区管理]] — lsblk/fdisk/mount/LVM/fstab
