@@ -631,3 +631,14 @@ updated: 2026-04-04
 - [[linux-traffic-shaping-与-QoS]] — HTB 分层整形、DSCP
 - [[linux-AppArmor-实战配置]] — profile 语法、compose→enforce
 - [[linux-udev-设备管理]] — 规则语法、调试、SYMLINK
+
+- [[linux-systemd-resolved-DNS-服务]] — 本地DNS缓存、DNSSEC
+- [[linux-swappiness-与-swap-策略]] — vm.swappiness 调优
+- [[linux-tmpfs-与-ramdisk]] — 内存文件系统
+- [[linux-iSCSI-存储协议]] — 块级网络存储
+- [[linux-Zram-压缩-swap]] — 内存压缩 swap
+- [[linux-systemd-nspawn-容器]] — systemd 原生容器
+- [[linux-NTP-时间同步]] — chrony/timedatectl
+- [[linux-bcache-缓存加速]] — SSD 缓存 HDD
+- [[linux-透明代理与-TPROXY]] — iptables TPROXY
+- [[linux-IO-uring-异步-IO]] — 新一代异步 IO 框架
