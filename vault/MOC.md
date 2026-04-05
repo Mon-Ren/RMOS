@@ -620,3 +620,14 @@ updated: 2026-04-04
 - [[linux-SystemTap-动态追踪]] — 探针/内核追踪
 - [[linux-perf-性能剖析]] — 硬件计数器/火焰图
 - [[linux-capabilities-能力机制]] — CAP_NET_RAW/setcap
+
+- [[linux-RCU-读-复制-更新]] — 无锁读取、延迟释放
+- [[linux-futex-快速用户空间互斥锁]] — 无竞争零开销锁
+- [[linux-kprobe-与追踪基础设施]] — ftrace/tracepoint/kprobe
+- [[linux-huge-pages-大页内存]] — THP/静态大页/TLB
+- [[linux-epoll-深入原理]] — LT/ET、O(1) 事件通知
+- [[linux-内核-Oops-与-panic]] — Oops 分析、kdump 配置
+- [[linux-coredump-配置与分析]] — coredumpctl/GDB 分析
+- [[linux-traffic-shaping-与-QoS]] — HTB 分层整形、DSCP
+- [[linux-AppArmor-实战配置]] — profile 语法、compose→enforce
+- [[linux-udev-设备管理]] — 规则语法、调试、SYMLINK
