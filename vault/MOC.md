@@ -495,3 +495,15 @@ updated: 2026-04-04
 - [[cpp-std-byte]] — 原始字节类型、位操作
 - [[cpp-function与lambda性能对比]] — 调用开销、内联
 - [[cpp-if-constexpr最佳实践]] — 使用模式、常见陷阱
+## C++ — 深入剖析（新增）
+
+- [[cpp-协程机制深入]] — 协程帧、promise_type、awaitable、状态机
+- [[cpp-memory-order实战剖析]] — 六种内存序的真实场景选择
+- [[cpp-类型擦除深度剖析]] — std::function 内部实现、SBO
+- [[cpp-自旋锁与排队自旋锁]] — TAS/Ticket/MCS 三种锁对比
+- [[cpp-shared_ptr控制块揭秘]] — 控制块结构、make_shared 优势与陷阱
+- [[cpp-完美转发与引用折叠]] — 转发引用、引用折叠规则、std::forward
+- [[cpp-epoll与高性能服务器模型]] — epoll 原理、LT/ET、Reactor 框架
+- [[cpp-variant访问的四种模式]] — visit、overload set、模式匹配
+- [[cpp-编译期字符串hash与switch-string]] — FNV-1a、consteval、switch-string
+- [[cpp-copy-and-swap惯用法]] — 异常安全赋值、强异常保证
