@@ -566,3 +566,13 @@ updated: 2026-04-04
 - [[linux-ACL-访问控制列表]] — setfacl/getfacl 细粒度权限
 - [[linux-日志系统-rsyslog-与-journal]] — journalctl、日志管理
 - [[linux-内核模块管理]] — modprobe/lsmod/黑名单
+
+- [[linux-启动流程与-initramfs]] — BIOS/UEFI→GRUB→initramfs→systemd
+- [[linux-性能分析工具]] — top/vmstat/iostat/perf/sar
+- [[linux-LVM-逻辑卷管理]] — PV/VG/LV 创建、扩展、快照
+- [[linux-Shell-函数与脚本进阶]] — 函数、trap、数组、调试
+- [[linux-DNS-解析与配置]] — resolv.conf/systemd-resolved/dig
+- [[linux-虚拟内存与-mmap]] — 进程地址空间、mmap、COW
+- [[linux-cgroup-资源限制]] — CPU/内存/进程数限制
+- [[linux-namespace-隔离机制]] — PID/NET/MOUNT namespace
+- [[linux-systemd-timer-定时器]] — OnCalendar、Persistent
