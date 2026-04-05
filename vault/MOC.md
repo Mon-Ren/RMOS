@@ -587,3 +587,14 @@ updated: 2026-04-04
 - [[linux-共享库与-ldconfig]] — .so/ldd/LD_LIBRARY_PATH
 - [[linux-网络命名空间与虚拟网络]] — veth/bridge/netns
 - [[linux-ELF-文件格式]] — ELF 头/段/GOT/PLT
+
+- [[linux-proc-文件系统详解]] — /proc 全局信息、进程信息、sysctl
+- [[linux-sysfs-与设备模型]] — /sys 设备树、udev 规则
+- [[linux-RAID-磁盘阵列]] — mdadm、RAID 0/1/5/10
+- [[linux-NFS-网络文件系统]] — NFS 服务端/客户端配置
+- [[linux-inotify-文件监控]] — inotifywait 事件驱动监控
+- [[linux-tc-流量控制]] — qdisc/class/filter、网络模拟
+- [[linux-BPF-与-eBPF]] — 验证器、hook 点、BCC 工具集
+- [[linux-PAM-认证模块]] — auth/account/session/password
+- [[linux-audit-审计系统]] — auditctl/ausearch/aureport
+- [[linux-内核编译与配置]] — menuconfig、make、安装
