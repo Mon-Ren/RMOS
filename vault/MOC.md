@@ -609,3 +609,14 @@ updated: 2026-04-04
 - [[linux-Page-Cache-与回写]] — 缓冲IO/dirty回写/O_DIRECT
 - [[linux-OOM-调优与内存保护]] — oom_score/memory.min
 - [[linux-Btrfs-文件系统]] — CoW/快照/子卷/透明压缩
+
+- [[linux-XDP-高性能网络]] — 驱动层包处理、DDoS 防御
+- [[linux-WireGuard-VPN]] — 现代 VPN 协议配置
+- [[linux-Nginx-核心配置]] — 反向代理/负载均衡/SSL
+- [[linux-Docker-基础]] — 容器/镜像/Dockerfile/Compose
+- [[linux-systemd-networkd-网络配置]] — networkd/netplan
+- [[linux-seccomp-系统调用过滤]] — seccomp-bpf/沙箱
+- [[linux-systemd-homed-用户目录]] — 便携用户/LUKS
+- [[linux-SystemTap-动态追踪]] — 探针/内核追踪
+- [[linux-perf-性能剖析]] — 硬件计数器/火焰图
+- [[linux-capabilities-能力机制]] — CAP_NET_RAW/setcap
