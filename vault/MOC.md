@@ -642,3 +642,14 @@ updated: 2026-04-04
 - [[linux-bcache-缓存加速]] — SSD 缓存 HDD
 - [[linux-透明代理与-TPROXY]] — iptables TPROXY
 - [[linux-IO-uring-异步-IO]] — 新一代异步 IO 框架
+
+- [[linux-IPVS-负载均衡]] — 四层 LB、DR/NAT/TUN 模式
+- [[linux-tc-netem-网络模拟]] — 延迟/丢包/乱序模拟
+- [[linux-KSM-内存去重]] — 同页合并、COW
+- [[linux-VRF-虚拟路由转发]] — 路由表隔离
+- [[linux-kpatch-热补丁]] — 内核在线修复
+- [[linux-ECC-内存错误处理]] — CE/UE/MCE
+- [[linux-GPU-直通与驱动]] — VFIO/nvidia-smi/PCIe直通
+- [[linux-POSIX-信号量与-System-V-IPC]] — sem/shm/msg
+- [[linux-GDB-高级调试]] — 断点/watchpoint/多线程
+- [[linux-oomd-系统级-OOM-守护进程]] — PSI/主动OOM
