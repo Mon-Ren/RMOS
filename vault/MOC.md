@@ -507,3 +507,14 @@ updated: 2026-04-04
 - [[cpp-variant访问的四种模式]] — visit、overload set、模式匹配
 - [[cpp-编译期字符串hash与switch-string]] — FNV-1a、consteval、switch-string
 - [[cpp-copy-and-swap惯用法]] — 异常安全赋值、强异常保证
+
+- [[cpp-虚表布局与多重继承]] — vtable 内部结构、多重继承 vptr 偏移
+- [[cpp-无锁SPSC队列实现]] — 单生产者单消费者无锁队列完整实现
+- [[cpp-异常处理的零开销模型]] — table-based 异常、landing pad、栈展开
+- [[cpp-move-if-noexcept与强异常保证]] — 条件移动、vector 扩容异常安全
+- [[cpp-SFINAE的现代替代方案]] — concepts vs if constexpr vs requires
+- [[cpp-placement-new与内存管理分层]] — operator new 分层、arena 分配器
+- [[cpp-structured-binding与自定义类型支持]] — tuple-like 协议、自定义解构
+- [[cpp-constexpr-分配与编译期容器]] — C++20 编译期 vector/string/排序
+- [[cpp-lambda-闭包对象的内存布局]] — lambda 编译器展开、捕获的底层
+- [[cpp-Rust风格Result在C++中的实践]] — std::expected 链式操作、and_then
