@@ -576,3 +576,14 @@ updated: 2026-04-04
 - [[linux-cgroup-资源限制]] — CPU/内存/进程数限制
 - [[linux-namespace-隔离机制]] — PID/NET/MOUNT namespace
 - [[linux-systemd-timer-定时器]] — OnCalendar、Persistent
+
+- [[linux-文件描述符与-IO-模型]] — 阻塞/非阻塞/select/poll/epoll
+- [[linux-strace-与调试工具]] — strace/ltrace/gdb 系统调用跟踪
+- [[linux-环境变量与-shell-配置]] — PATH/bashrc/profile 加载顺序
+- [[linux-进程调度与优先级]] — CFS/nice/renice/CPU亲和性
+- [[linux-文件压缩与归档]] — tar/gzip/bzip2/xz/zip
+- [[linux-SELinux-与-AppArmor]] — MAC 强制访问控制
+- [[linux-源码编译安装]] — configure/make/cmake
+- [[linux-共享库与-ldconfig]] — .so/ldd/LD_LIBRARY_PATH
+- [[linux-网络命名空间与虚拟网络]] — veth/bridge/netns
+- [[linux-ELF-文件格式]] — ELF 头/段/GOT/PLT
