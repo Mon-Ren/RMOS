@@ -653,3 +653,14 @@ updated: 2026-04-04
 - [[linux-POSIX-信号量与-System-V-IPC]] — sem/shm/msg
 - [[linux-GDB-高级调试]] — 断点/watchpoint/多线程
 - [[linux-oomd-系统级-OOM-守护进程]] — PSI/主动OOM
+
+- [[linux-fscrypt-文件系统加密]] — 目录级加密
+- [[linux-dm-crypt-与-LUKS-全盘加密]] — LUKS2/argon2id/TPM
+- [[linux-PSI-压力失速信息]] — some/full 压力指标
+- [[linux-Landlock-安全沙箱]] — 非特权文件沙箱
+- [[linux-DAMON-内存监控]] — 冷热页/DAMOS自动优化
+- [[linux-sched_ext-调度器扩展]] — BPF 自定义调度
+- [[linux-rust-for-linux-内核-Rust-支持]] — 内核 Rust 驱动
+- [[linux-Virtio-半虚拟化]] — vring/vDPA/virtio设备
+- [[linux-User-namespace-进阶]] — UID映射/rootless容器
+- [[linux-IPv6-基础与配置]] — SLAAC/NDP/ICMPv6
