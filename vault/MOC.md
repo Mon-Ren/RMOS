@@ -555,3 +555,14 @@ updated: 2026-04-04
 - [[linux-systemctl-与-systemd]] — 服务管理、journalctl、unit 文件
 - [[linux-SSH-配置与安全]] — 密钥、config、隧道、安全加固
 - [[linux-磁盘与分区管理]] — lsblk/fdisk/mount/LVM/fstab
+
+- [[linux-包管理-apt-与-yum]] — apt/dpkg vs yum/dnf
+- [[linux-内存管理基础]] — free/swap/OOM Killer
+- [[linux-TCP-连接状态与排查]] — TIME_WAIT/CLOSE_WAIT 排查
+- [[linux-防火墙-iptables]] — filter/nat 表、NAT、规则管理
+- [[linux-inode-与文件系统原理]] — inode 结构、ext4 布局
+- [[linux-正则表达式速查]] — BRE/ERE/PCRE 语法
+- [[linux-sudo-与提权机制]] — sudoers 配置、安全策略
+- [[linux-ACL-访问控制列表]] — setfacl/getfacl 细粒度权限
+- [[linux-日志系统-rsyslog-与-journal]] — journalctl、日志管理
+- [[linux-内核模块管理]] — modprobe/lsmod/黑名单
